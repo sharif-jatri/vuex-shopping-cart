@@ -15,16 +15,37 @@
   color: #2c3e50;
 }
 
-nav {
-  padding: 30px;
+html, body{
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
 
-  a {
-    font-weight: bold;
+body{
+  background-color: rgb(245,245,245);
+}
+
+#nav{
+  padding: 10px;
+  width: 100%;
+  height: 30px;
+  background-color: white;
+  line-height: 30px;
+}
+
+a{
+  font-weight: bold;
+  color: darkgray;
+  text-decoration: none;
+  margin: 0 5px;
+  font-size: 1.25rem;
+
+  &.active{
     color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
   }
+}
+
+.text-center{
+  text-align: center;
 }
 </style>
