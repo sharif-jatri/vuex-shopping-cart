@@ -12,7 +12,8 @@
 
       <div class="cart-total" v-if="product_total">
         <h3>In Cart</h3>
-        <h4>{{ product_total}}</h4>
+        <h4>Quantity: {{ product_total}}</h4>
+        <h4>Total: {{ product_total * product.price.toFixed(2)}}</h4>
       </div>
 
       <div class="button-container">
