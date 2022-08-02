@@ -17,7 +17,7 @@
 
       <div class="button-container">
         <button class="remove">Remove</button>
-        <button class="add">Add</button>
+        <button class="add" @click="addToCart()">Add to Cart</button>
       </div>
     </div>
   </div>
@@ -27,9 +27,14 @@
 export default {
   name: 'ProductDescriptionDrawer',
   props: ['active', 'product'],
+  methods: {
+    addToCart(){
+      this.$store.commit('addToCart', this.product)
+    }
+  },
   computed: {
     product_total(){
-        return 56.00
+        return this.$store.getters.productQuantity(this.product)
     }
   }
 }

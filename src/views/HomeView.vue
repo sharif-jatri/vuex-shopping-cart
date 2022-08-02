@@ -39,8 +39,8 @@ export default {
     }
   },
   methods: {
-    viewProduct($product){
-      this.product = $product;
+    viewProduct(product){
+      this.product = product;
       this.active.product_drawer = true
     },
     closeProductDrawer(){
