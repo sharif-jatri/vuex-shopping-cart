@@ -1,6 +1,10 @@
 <template>
   <div class="home">
-    <HelloWorld />
+    <ProductDescriptionDrawer
+      :product="product"
+      :active="active.product_drawer"
+    />
+
     <div class="product-cards-container">
       <ProductSummaryCard
         v-for="product in items"
@@ -14,20 +18,23 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 import ProductSummaryCard from '@/components/products/ProductSummaryCard.vue'
 import items from "@/data/items";
+import ProductDescriptionDrawer from "@/components/products/ProductDescriptionDrawer";
 
 export default {
   name: 'HomeView',
   components: {
-    HelloWorld,
-    ProductSummaryCard
+    ProductSummaryCard,
+    ProductDescriptionDrawer
   },
   data() {
     return {
       items: items,
-      product: null
+      product: null,
+      active: {
+        product_drawer: true
+      }
     }
   },
   methods: {
