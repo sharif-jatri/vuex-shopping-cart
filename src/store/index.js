@@ -13,6 +13,9 @@ export default createStore({
       const item = state.cart.find(i => i.id === product.id)
       if(item) return item.quality;
       else return null;
+    },
+    cartItems: state => {
+      return state.cart;
     }
   },
   mutations: {
