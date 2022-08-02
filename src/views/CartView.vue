@@ -6,21 +6,23 @@
         :key="product.id"
         :product="product"
     />
+    <CartSummaryPaymentCard />
   </div>
 </template>
 
 <script>
 import CartItemCard from "@/components/cart/CartItemCard";
+import CartSummaryPaymentCard from "@/components/cart/CartSummaryPaymentCard";
 
 export default {
   name: 'CartView',
   components: {
-    CartItemCard
+    CartItemCard,
+    CartSummaryPaymentCard
   },
 
   computed: {
     items(){
-      console.log(this.$store.getters.cartItems)
       return this.$store.getters.cartItems
     }
   }
