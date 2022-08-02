@@ -11,7 +11,7 @@ export default createStore({
   getters: {
     productQuantity: state => product =>{
       const item = state.cart.find(i => i.id === product.id)
-      if(item) return item.quality;
+      if(item) return item.quantity;
       else return null;
     },
     cartItems: state => {
@@ -23,10 +23,10 @@ export default createStore({
       let item = state.cart.find(i => i.id === product.id)
 
       if(item){
-        item.quality++
+        item.quantity++
       }
       else{
-        state.cart.push({...product, quality: 1})
+        state.cart.push({...product, quantity: 1})
       }
 
       updatedLocalStorage(state.cart)
@@ -35,8 +35,8 @@ export default createStore({
       let item = state.cart.find(i => i.id === product.id)
 
       if(item){
-        if(item.quality > 1){
-          item.quality--;
+        if(item.quantity > 1){
+          item.quantity--;
         } else {
           state.cart = state.cart.filter(i => i.id !== product.id)
         }

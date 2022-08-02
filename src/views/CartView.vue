@@ -1,20 +1,26 @@
 <template>
   <div class="cart">
     <h1>Your Cart</h1>
-    <div
+    <CartItemCard
         v-for="product in items"
         :key="product.id"
-    >
-      {{product.name}}
-    </div>
+        :product="product"
+    />
   </div>
 </template>
 
 <script>
+import CartItemCard from "@/components/cart/CartItemCard";
+
 export default {
   name: 'CartView',
+  components: {
+    CartItemCard
+  },
+
   computed: {
     items(){
+      console.log(this.$store.getters.cartItems)
       return this.$store.getters.cartItems
     }
   }
