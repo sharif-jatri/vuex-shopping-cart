@@ -3,6 +3,7 @@
     <ProductDescriptionDrawer
       :product="product"
       :active="active.product_drawer"
+      v-on:close-product-drawer="closeProductDrawer"
     />
 
     <div class="product-cards-container">
@@ -33,13 +34,17 @@ export default {
       items: items,
       product: null,
       active: {
-        product_drawer: true
+        product_drawer: false
       }
     }
   },
   methods: {
     viewProduct($product){
       this.product = $product;
+      this.active.product_drawer = true
+    },
+    closeProductDrawer(){
+      this.active.product_drawer = false
     }
   }
 }

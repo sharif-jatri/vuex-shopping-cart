@@ -1,6 +1,6 @@
 <template>
   <div class="drawer-background" :class="{show: active}" @click="$emit('close-product-drawer')" />
-  <div class="drawer" :show="{show: active}">
+  <div class="drawer" :class="{show: active}">
     <div class="drawer-close" @click="$emit('close-product-drawer')">
         X
     </div>
