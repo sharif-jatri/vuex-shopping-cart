@@ -17,7 +17,7 @@
       </div>
 
       <div class="button-container">
-        <button class="remove" @click="removeFromCart()">Remove</button>
+        <button v-if="product_total" class="remove" @click="removeFromCart()">Remove</button>
         <button class="add" @click="addToCart()">Add to Cart</button>
       </div>
     </div>
